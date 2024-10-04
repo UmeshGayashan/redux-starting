@@ -7,7 +7,7 @@ class ButtonComponent extends Component {
   render() {
     return (
       <div>
-        <button>Click Me</button>
+        <button onClick={()=>this.props.fetchPosts()}>Click Me</button>
       </div>
     )
   }
