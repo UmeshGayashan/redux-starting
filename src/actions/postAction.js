@@ -1,6 +1,8 @@
+import {FETCH_BUTTON_CLICKED} from "./types.js"
+
 export const fetchPosts=()=>{
     return{
-        type:'FETCH_BUTTON_CLICKED', //Action Name
+        type:FETCH_BUTTON_CLICKED, //Action Name
         payload: [
             {
                 userId: 1,
