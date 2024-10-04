@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import { fetchPosts } from '../actions/postAction'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
-export default class ButtonComponent extends Component {
+class ButtonComponent extends Component {
   render() {
     return (
       <div>
@@ -9,3 +12,9 @@ export default class ButtonComponent extends Component {
     )
   }
 }
+
+function matchDispatchToProps(dispatch){
+    return bindActionCreators({fetchPosts:fetchPosts},dispatch)
+}
+
+export default connect(null,matchDispatchToProps)(ButtonComponent)
