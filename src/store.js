@@ -5,7 +5,7 @@ import { createStoreHook } from 'react-redux';
 const middleware = [thunk];
 const initialState = {};
 
-const store = createStoreHook(
+const store = createStore(
     rootReducer,
     initialState,
     compose(
