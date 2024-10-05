@@ -10,6 +10,9 @@ class PostList extends Component {
         });
     }
   render() {
+    if(!this.props.AllPost){
+        return (<h1>Click the Button First</h1>)
+    }
     return (
       <ul>
         {this.createListItems()}
