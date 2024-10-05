@@ -7,7 +7,7 @@ class PostList extends Component {
     createListItems(){
         return this.props.AllPost.map((post)=>{
             return(
-                <li key={post.id}>{post.title} {post.body}</li>
+                <li key={post.id} onClick={()=>this.props.selectPost(post)}>{post.title} {post.body}</li>
             );
         });
     }
