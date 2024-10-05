@@ -24,7 +24,7 @@ class PostList extends Component {
 
 function mapStatetoProps(state){
     return{
-        AllPost: state.AllPost
+        AllPost: state.all_Posts
     };
 }
 
