@@ -5,7 +5,7 @@ import { selectPost } from "../actions/postAction";
 
 const rootReducer = combineReducers({
     all_Posts:reducer_AllPost,
-    selectedPost:selectPost
+    selectedPost:reducer_SelectedPost
 })
 
 export default rootReducer;
