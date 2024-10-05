@@ -1,6 +1,7 @@
 import '../App.css';
 import ButtonComponent from './ButtonComponent';
 import PostList from './PostList';
+import ShowPost from './ShowPost';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <ButtonComponent/>
       <br></br>
       <PostList/>
+      <ShowPost/>
     </div>
   );
 }
