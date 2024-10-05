@@ -1,4 +1,6 @@
+import { type } from "@testing-library/user-event/dist/type/index.js"
 import {FETCH_BUTTON_CLICKED} from "./types.js"
+import { SELECT_POST } from "./types.js"
 
 export const fetchPosts=()=>{
     return{
@@ -36,4 +38,11 @@ export const fetchPosts=()=>{
               }
         ]
     }
+}
+
+export const selectPost=(post)=>{
+  return{
+    type:SELECT_POST,
+    payload:post
+  }
 }
