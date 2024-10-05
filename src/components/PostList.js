@@ -35,4 +35,4 @@ function matchDispatchToProps(dispatch){
 
 }
 
-export default connect(mapStatetoProps,null)(PostList)
+export default connect(mapStatetoProps,matchDispatchToProps)(PostList)
