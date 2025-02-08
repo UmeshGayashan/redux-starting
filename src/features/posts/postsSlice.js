@@ -52,7 +52,7 @@ const postsSlice = createSlice({
 });
 
 // Export Actions
-export const { fetchPosts, selectPost } = postsSlice.actions;
+export const { fetchPosts, setSelectedPost } = postsSlice.actions;
 
 // Export Reducer
 export default postsSlice.reducer;

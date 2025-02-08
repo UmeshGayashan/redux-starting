@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPosts, selectPost } from '../features/posts/postsSlice';
+import { fetchPosts, setSelectedPost } from '../features/posts/postsSlice';
 
 const PostsList = () => {
     const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const PostsList = () => {
   
         <ul>
           {posts.map((post) => (
-            <li key={post.id} onClick={() => dispatch(selectPost(post))}>
+            <li key={post.id} onClick={() => dispatch(setSelectedPost(post))}>
               {post.title}
             </li>
           ))}
