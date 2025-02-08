@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchPosts, setSelectedPost } from '../features/posts/postsSlice';
 
 const PostsList = () => {
-    const dispatch = useDispatch();
-    const posts = useSelector((state) => state.posts.posts);
+    const dispatch = useDispatch(); // useDispatch() → To send actions (e.g., fetch data, update state).
+    const posts = useSelector((state) => state.posts.posts);  // useSelector() → To read data from the Redux store.
     const selectedPost = useSelector((state) => state.posts.selectedPost);
 
 
