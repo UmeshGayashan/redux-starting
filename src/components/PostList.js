@@ -36,3 +36,4 @@ function matchDispatchToProps(dispatch){
 }
 
 export default connect(mapStatetoProps,matchDispatchToProps)(PostList)
+// (get,give)

@@ -23,3 +23,4 @@ function mapStatetoProps(state){
 }
 
 export default connect(mapStatetoProps,null)(ShowPost)
+ // (get,give)
