@@ -1,39 +1,34 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { selectPost } from '../actions/postAction';
-import { bindActionCreators } from 'redux'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchPosts, setSelectedPost } from '../features/posts/postsSlice';
 
-class PostList extends Component {
-    createListItems(){
-        return this.props.AllPost.map((post)=>{
-            return(
-                <li key={post.id} onClick={()=>this.props.selectPost(post)}>{post.title} {post.body}</li>
-            );
-        });
-    }
-  render() {
-    if(!this.props.AllPost){
-        return (<h1>Click the Button First</h1>)
-    }
+const PostsList = () => {
+    const dispatch = useDispatch(); // useDispatch() → To send actions (e.g., fetch data, update state).
+    const posts = useSelector((state) => state.posts.posts);  // useSelector() → To read data from the Redux store.
+    const selectedPost = useSelector((state) => state.posts.selectedPost);
+
+
     return (
-      <ul>
-        {this.createListItems()}
-      </ul>
+      <div>
+        <h2>Posts List</h2>
+        <button onClick={() => dispatch(fetchPosts())}>Fetch Posts</button>
+  
+        <ul>
+          {posts.map((post) => (
+            <li key={post.id} onClick={() => dispatch(setSelectedPost(post))}>
+              {post.title}
+            </li>
+          ))}
+        </ul>
+  
+        {selectedPost && (
+          <div>
+            <h3>Selected Post:</h3>
+            <p>{selectedPost.body}</p>
+          </div>
+        )}
+      </div>
     );
-  }
-}
-
-
-function mapStatetoProps(state){
-    return{
-        AllPost: state.all_Posts
-    };
-}
-
-function matchDispatchToProps(dispatch){
-    return bindActionCreators({selectPost:selectPost},dispatch)
-
-}
-
-export default connect(mapStatetoProps,matchDispatchToProps)(PostList)
-// (get,give)
+  };
+  
+  export default PostsList;
